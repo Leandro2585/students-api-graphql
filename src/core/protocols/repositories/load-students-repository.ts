@@ -1,4 +1,4 @@
-import { StudentModel } from '@core/models/student'
+import { StudentModel } from '@core/models'
 
 export interface LoadStudentsRepository {
   load: (input: LoadStudentsRepository.Input) => LoadStudentsRepository.Output

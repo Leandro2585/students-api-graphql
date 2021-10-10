@@ -1,0 +1,20 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "postgres",
+  "password": "123456789",
+  "database": "students-api",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+    "src/infra/typeormentity/**/*.ts"
+  ],
+  "migrations": [
+    "src/infra/typeorm/migrations/**/*.ts"
+  ],
+  "cli": {
+    "entitiesDir": "src/infra/typeorm/entities",
+    "migrationsDir": "src/infra/typeorm/migrations"
+  }
+}
