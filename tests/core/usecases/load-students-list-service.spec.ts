@@ -8,7 +8,7 @@ type Input = { name?: string, cpf?: string, email?: string }
 export type LoadStudentsListService = (input: Input) => Promise<void>
 
 const setupLoadStudents: Setup = (loadStudentsRepository) => async (input) => {
-  await loadStudentsRepository.load(input)
+  // await loadStudentsRepository.load(input)
 }
 
 describe('load-students-list service', () => {
