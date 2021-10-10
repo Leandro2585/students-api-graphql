@@ -1,26 +1,16 @@
 import { mock, MockProxy } from 'jest-mock-extended'
 
 import { LoadStudentsRepository } from '@core/protocols/repositories'
+import { LoadStudentsListService, setupLoadStudents } from '@core/usecases'
 import { NotFoundError } from '@core/errors'
-
-type Setup = (loadStudentsRepository: LoadStudentsRepository) => LoadStudentsListService
-type Input = { name?: string, cpf?: string, email?: string }
-
-export type LoadStudentsListService = (input: Input) => Promise<void>
-
-const setupLoadStudents: Setup = (loadStudentsRepository) => async (input) => {
-  const students = await loadStudentsRepository.load(input)
-  if (students !== undefined) {
-    return console.log('dd')
-  }
-
-  throw new NotFoundError('students')
-}
+import { StudentModel } from '@core/models'
 
 describe('load-students-list service', () => {
   let cpf: string
   let name: string
   let email: string
+  let studentOne: StudentModel
+  let studentTwo: StudentModel
   let loadStudentsRepository: MockProxy<LoadStudentsRepository>
   let sut: LoadStudentsListService
 
@@ -29,6 +19,9 @@ describe('load-students-list service', () => {
     email = 'any_email'
     cpf = 'any_cpf'
     loadStudentsRepository = mock()
+    studentOne = { name, email, cpf }
+    studentTwo = { name: 'other_name', email: 'other_email', cpf: 'other_cpf' }
+    loadStudentsRepository.load.mockImplementation(() => [studentOne, studentTwo])
   })
 
   beforeEach(() => {
@@ -41,10 +34,16 @@ describe('load-students-list service', () => {
     expect(loadStudentsRepository.load).toHaveBeenCalledWith({ name, email, cpf })
   })
 
-  test('should throw NotFoundExceptionError when LoadStudentsRepository returns undefined', async () => {
-    loadStudentsRepository.load.mockResolvedValueOnce(undefined)
-    const promise = await sut({ name, email, cpf })
+  test('should throw NotFoundError when LoadStudentsRepository returns undefined', async () => {
+    loadStudentsRepository.load.mockImplementationOnce(() => undefined)
+    const promise = sut({ name, email, cpf })
 
     await expect(promise).rejects.toThrow(new NotFoundError('students'))
+  })
+
+  test('should return students list on success', async () => {
+    const response = await sut({ name, email, cpf })
+
+    expect(response).toEqual([studentOne, studentTwo])
   })
 })
