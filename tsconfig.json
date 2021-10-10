@@ -14,7 +14,8 @@
     "outDir": "build",
     "rootDirs": ["src", "tests"],
     "paths": {
-      "@main/*": ["main/*"]
+      "@main/*": ["main/*"],
+      "@core/*": ["core/*"]
     }
   },
   "include": ["src", "tests"]
