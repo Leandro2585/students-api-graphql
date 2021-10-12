@@ -3,7 +3,7 @@ import { getConnection, getRepository, Repository } from 'typeorm'
 
 import { LoadStudentsRepository } from '@core/protocols/repositories'
 import { PostgresStudent } from '@infra/typeorm/entities'
-import { makeFakeDatabase } from '../mocks/mock-connection'
+import { makeFakeDatabase } from '../mocks'
 
 class PostgresStudentRepository {
   async load ({ name, email, cpf }: LoadStudentsRepository.Input) {

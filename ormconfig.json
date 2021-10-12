@@ -1,10 +1,11 @@
 {
+  "name": "default",
   "type": "postgres",
   "host": "localhost",
-  "port": 5432,
+  "port": 35432,
   "username": "postgres",
   "password": "123456789",
-  "database": "students-api",
+  "database": "students-api-graphql",
   "synchronize": true,
   "logging": false,
   "entities": [

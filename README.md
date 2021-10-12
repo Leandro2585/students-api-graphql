@@ -1,15 +1,15 @@
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Leandro2585/template-node-clean?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Leandro2585/students-api-graphql?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro2585/template-node-clean">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro2585/students-api-graphql">
 
-  <a href="https://github.com/Leandro2585/template-node-clean/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Leandro2585/template-node-clean">
+  <a href="https://github.com/Leandro2585/students-api-graphql/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Leandro2585/students-api-graphql">
   </a>
 
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/Leandro2585/template-node-clean/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/Leandro2585/template-node-clean?style=social">
+   <a href="https://github.com/Leandro2585/students-api-graphql/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/Leandro2585/students-api-graphql?style=social">
   </a>
 
   <a href="https://github.com.br/Leandro2585">
@@ -19,7 +19,7 @@
 </p>
 
 <h4 align="center">
-	🚧  Clean Server - Em Desenvolvimento 🚀 🚧
+	🚧  Students Api GraphQL - Em Desenvolvimento 🚀 🚧
 </h4>
 
 <p align="center">
@@ -33,7 +33,7 @@
 
 ## 💻 Sobre o projeto
 
-Clean Server - é uma forma de acelerar o processo da criação de um novo projeto, esse template foi desenvolvido considerando boa práticas de programação, tal como conceitos de arquitetura limpa.
+Students Api GraphQL - É um projeto que lista alunos através de filtros como CPF, Email ou Nome.
 
 ---
 
@@ -64,6 +64,9 @@ $ npm install
 $ docker run -d --name postgresql -e POSTGRESQL_PASSWORD=your_password -e POSTGRESQL_USERNAME=your_username -e POSTGRES_DATABASE=your_database -p 35432:5432 bitnami/postgresql:latest
 
 # Configure suas credenciais de banco no ormconfig.json
+
+# Rode as migrations para modelar seu banco de dados
+$ npm run typeorm migration:run
 
 # Rode os testes pra verificar se tudo está funcionando corretamente
 $ npm test:staged
