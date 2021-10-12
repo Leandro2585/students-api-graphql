@@ -21,7 +21,7 @@ describe('load-students-list service', () => {
     loadStudentsRepository = mock()
     studentOne = { name, email, cpf }
     studentTwo = { name: 'other_name', email: 'other_email', cpf: 'other_cpf' }
-    loadStudentsRepository.load.mockImplementation(() => [studentOne, studentTwo])
+    loadStudentsRepository.load.mockResolvedValue([studentOne, studentTwo])
   })
 
   beforeEach(() => {
@@ -35,7 +35,7 @@ describe('load-students-list service', () => {
   })
 
   test('should throw NotFoundError when LoadStudentsRepository returns undefined', async () => {
-    loadStudentsRepository.load.mockImplementationOnce(() => undefined)
+    loadStudentsRepository.load.mockResolvedValueOnce(undefined)
     const promise = sut({ name, email, cpf })
 
     await expect(promise).rejects.toThrow(new NotFoundError('students'))

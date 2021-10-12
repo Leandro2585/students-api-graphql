@@ -1,7 +1,7 @@
 import { PrimaryGeneratedColumn, Column, Entity } from 'typeorm';
 
 @Entity('tb_student')
-class PostgresStudent {
+export class PostgresStudent {
   @PrimaryGeneratedColumn('uuid')
   student_id!: string
 
