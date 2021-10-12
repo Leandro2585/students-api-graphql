@@ -7,7 +7,7 @@ export class tbStudents1633903449549 implements MigrationInterface {
       name: 'tb_student',
       columns: [
         {
-          name: 'student_id',
+          name: 'id',
           type: 'varchar',
           isPrimary: true,
           generationStrategy: 'uuid'

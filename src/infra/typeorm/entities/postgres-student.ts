@@ -3,7 +3,7 @@ import { PrimaryGeneratedColumn, Column, Entity } from 'typeorm';
 @Entity('tb_student')
 export class PostgresStudent {
   @PrimaryGeneratedColumn('uuid')
-  student_id!: string
+  id!: string
 
   @Column()
   name!: string
