@@ -1,23 +1,8 @@
-import { ApolloServer, gql } from 'apollo-server'
 import '@main/config/module-alias'
-import { makeLoadStudentsControllerFactory } from '@main/factories/controllers'
-
-const typeDefs = gql`
-  type Student {
-    id: ID!
-    name: String!
-    email: String!
-    cpf: String!
-  }
-  type Query {
-    students: [Student!]!
-  }
-`
-const resolvers = {
-  Query: {
-    students: () => makeLoadStudentsControllerFactory().handle
-  }
-}
+import { ApolloServer } from 'apollo-server'
+import typeDefs from '@main/graphql/typedefs'
+import resolvers from '@main/graphql/resolvers'
 
 const server = new ApolloServer({ typeDefs, resolvers })
-server.listen().then(({ url }) => console.log(`Server started at ${url}`))
+
+export { server }
