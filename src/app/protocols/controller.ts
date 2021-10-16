@@ -1,5 +1,6 @@
-import { serverError } from '@app/helpers';
+import { badRequest, serverError } from '@app/helpers';
 import { HttpResponse, Validator } from '@app/protocols';
+import { ValidationComposite } from '@app/validator';
 
 export abstract class Controller {
   abstract execute(httpRequest: any): Promise<HttpResponse>
@@ -8,6 +9,10 @@ export abstract class Controller {
   }
 
   async handle(httpRequest: any): Promise<HttpResponse> {
+    const error = this.validate(httpRequest)
+    if(error !== undefined) {
+      return badRequest(error)
+    }    
     try {
       return await this.execute(httpRequest)
     } catch (error) {
@@ -15,8 +20,8 @@ export abstract class Controller {
     }
   }
 
-  // private validate(httpRequest: any): Error | undefined {
-  //   const validators = this.buildValidators(httpRequest)
-  //   return new ValidationComposite(validators)
-  // }
+  private validate(httpRequest: any): Error | undefined {
+    const validators = this.buildValidators(httpRequest)
+    return new ValidationComposite(validators).validate()
+  }
 }
