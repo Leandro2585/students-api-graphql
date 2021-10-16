@@ -5,6 +5,7 @@
   "author": "Leandro2585 <leo.real2585@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only -r dotenv/config --inspect=0.0.0.0:9229 src/main/server.ts",
     "lint": "eslint .",
     "lint:fix": "yarn lint -- --fix",
     "prepare": "husky install",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.1",
+    "@types/graphql": "^14.5.0",
     "@types/jest": "^27.0.2",
     "@types/module-alias": "^2.0.1",
     "@types/node": "^8.0.29",
