@@ -1,0 +1,34 @@
+{
+  "students": [
+    {
+      "name": "Martin Vinicius Cardoso",
+      "email": "martinviniciuscardoso-83@sinsesp.com.br",
+      "cpf": "992.187.261-37"
+    },
+    {
+      "name": "Antonio Enrico Gomes",
+      "email": "antonioenricogomes__antonioenricogomes@reval.net",
+      "cpf": "094.688.231-21"
+    },
+    {
+      "name": "Alessandra Sandra Olivia da Silva",
+      "email": "alessandrasandraoliviadasilva@formulaweb.com.br",
+      "cpf": "206.728.621-82"
+    },
+    {
+      "name": "César Oliver Thales da Cunha",
+      "email": "cesaroliverthalesdacunha@ruilacos.com.br",
+      "cpf": "753.749.721-46"
+    },
+    {
+      "name": "Lorena Manuela Betina da Cruz",
+      "email": "lorenamanuelabetinadacruz_@sent.com",
+      "cpf": "241.379.521-91"
+    },
+    {
+      "name": "Olivia Malu Regina Ramos",
+      "email": "oliviamalureginaramos@iss.com.br",
+      "cpf": "603.357.521-01"
+    }
+  ]
+}
