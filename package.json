@@ -5,6 +5,10 @@
   "author": "Leandro2585 <leo.real2585@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node build/main/server.js",
+    "build": "rimraf build && tsc -p tsconfig-build.json",
+    "up": "yarn build && docker-compose up -d",
+    "down": "docker-compose down",
     "dev": "ts-node-dev --respawn --transpile-only -r dotenv/config --inspect=0.0.0.0:9229 src/main/server.ts",
     "lint": "eslint .",
     "lint:fix": "yarn lint -- --fix",
@@ -24,6 +28,7 @@
     "module-alias": "^2.2.2",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
     "typeorm": "0.2.38",
     "validator": "^13.6.0"
   },
