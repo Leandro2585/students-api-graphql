@@ -8,6 +8,10 @@ services:
     - ./data:/data/db
    ports:
 		- "35432:5432"
+	 environment:
+	  - POSTGRESQL_USERNAME=postgres
+		- POSTGRESQL_PASSWORD=123456789
+		- POSTGRES_DATABASE=students-api-graphql
 	api:
 	 container_name: students-api-graphql
 	 build: .

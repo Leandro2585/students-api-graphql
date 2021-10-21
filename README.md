@@ -57,8 +57,25 @@ $ git clone git@github.com:Leandro2585/students-api-graphql.git
 # Vá para a pasta server
 $ cd students-api-graphql
 
-# Execute o script do docker-compose
-$ yarn up
+# Instale as dependências
+$ npm install
+
+# Crie uma instância do banco de dados PostgreSQL com Docker
+$ docker run -d --name postgresql -e POSTGRESQL_PASSWORD=your_password -e POSTGRESQL_USERNAME=your_username -e POSTGRES_DATABASE=your_database -p 35432:5432 bitnami/postgresql:latest
+
+# Configure suas credenciais de banco no ormconfig.json
+
+# Rode as migrations para modelar seu banco de dados
+$ npm run typeorm migration:run
+
+# Rode os testes pra verificar se tudo está funcionando corretamente
+$ npm test:staged
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+
+# O servidor inciará na porta:3333 - acesse http://localhost:3333
+
 ```
 
 ---
