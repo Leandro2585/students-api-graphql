@@ -1,5 +1,5 @@
-import { Validator } from '@app/protocols';
-import { EmailValidator } from '@app/validator';
+import { Validator } from '@application/protocols';
+import { EmailValidator } from '@application/validators';
 
 type BuilderInput = {
   value: string

@@ -1,9 +1,9 @@
 import { mock, MockProxy } from 'jest-mock-extended'
 
-import { LoadStudentsRepository } from '@core/protocols/repositories'
-import { LoadStudentsListService, setupLoadStudents } from '@core/usecases'
-import { NotFoundError } from '@core/errors'
-import { StudentModel } from '@core/models'
+import { LoadStudentsRepository } from '@domain/protocols/repositories'
+import { LoadStudentsListService, setupLoadStudents } from '@domain/usecases'
+import { NotFoundError } from '@domain/errors'
+import { StudentModel } from '@domain/models'
 
 describe('load-students-list service', () => {
   let cpf: string
@@ -19,8 +19,8 @@ describe('load-students-list service', () => {
     email = 'any_email'
     cpf = 'any_cpf'
     loadStudentsRepository = mock()
-    studentOne = { name, email, cpf }
-    studentTwo = { name: 'other_name', email: 'other_email', cpf: 'other_cpf' }
+    studentOne = { id: 'one', name, email, cpf }
+    studentTwo = { id: 'two', name: 'other_name', email: 'other_email', cpf: 'other_cpf' }
     loadStudentsRepository.load.mockResolvedValue([studentOne, studentTwo])
   })
 

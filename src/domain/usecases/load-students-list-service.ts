@@ -1,6 +1,6 @@
-import { NotFoundError } from '@core/errors'
-import { StudentModel } from '@core/models'
-import { LoadStudentsRepository } from '@core/protocols/repositories'
+import { NotFoundError } from '@domain/errors'
+import { StudentModel } from '@domain/models'
+import { LoadStudentsRepository } from '@domain/protocols/repositories'
 
 type Setup = (loadStudentsRepository: LoadStudentsRepository) => LoadStudentsListService
 type Input = { name?: string, cpf?: string, email?: string }

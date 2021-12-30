@@ -1,6 +1,6 @@
 import { getRepository } from 'typeorm';
 
-import { LoadStudentsRepository } from '@core/protocols/repositories';
+import { LoadStudentsRepository } from '@domain/protocols/repositories';
 import { PostgresStudent } from '@infra/typeorm/entities'
 
 export class StudentsRepository implements LoadStudentsRepository {

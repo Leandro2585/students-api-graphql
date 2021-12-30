@@ -1,4 +1,4 @@
-import { Controller } from '@app/protocols'
+import { Controller } from '@application/protocols'
 import { ApolloError, UserInputError } from 'apollo-server'
 
 export const adaptResolver = async (controller: Controller, args: any): Promise<any> => {

@@ -1,9 +1,9 @@
-import { NotFoundError } from '@app/errors';
-import { badRequest, ok } from '@app/helpers';
-import { Controller, HttpResponse, Validator } from '@app/protocols';
-import { ValidationBuilder } from '@app/validator/validation-builder';
-import { StudentModel } from '@core/models';
-import { LoadStudentsListService } from '@core/usecases';
+import { NotFoundError } from '@application/errors';
+import { badRequest, ok } from '@application/helpers';
+import { ValidationBuilder } from '@application/validators';
+import { Controller, HttpResponse, Validator } from '@application/protocols';
+import { LoadStudentsListService } from '@domain/usecases';
+import { StudentModel } from '@domain/models';
 
 export type HttpRequest = {
   name?: string

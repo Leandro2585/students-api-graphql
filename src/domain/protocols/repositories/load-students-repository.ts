@@ -1,4 +1,4 @@
-import { StudentModel } from '@core/models'
+import { StudentModel } from '@domain/models'
 
 export interface LoadStudentsRepository {
   load: (input: LoadStudentsRepository.Input) => Promise<LoadStudentsRepository.Output>

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "build",
     "rootDirs": ["src", "tests"],
-    "target": "ES2018",
+    "target": "ES2021",
     "sourceMap": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,9 +12,9 @@
     "baseUrl": "src",
     "paths": {
       "@main/*": ["main/*"],
-      "@core/*": ["core/*"],
+      "@domain/*": ["domain/*"],
       "@infra/*": ["infra/*"],
-      "@app/*": ["app/*"],
+      "@application/*": ["application/*"],
       "@tests/*": ["../tests/*"]
     },
     "strict": true,

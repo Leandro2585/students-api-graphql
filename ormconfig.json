@@ -1,7 +1,7 @@
 {
   "name": "default",
   "type": "postgres",
-  "host": "localhost",
+  "host": "jdbc:postgresql://localhost:35432/students-api-graphql",
   "port": 35432,
   "username": "postgres",
   "password": "123456789",

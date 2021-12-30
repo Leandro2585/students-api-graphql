@@ -1,5 +1,5 @@
-import { ServerError } from '@app/errors';
-import { HttpResponse } from '@app/protocols';
+import { ServerError } from '@application/errors';
+import { HttpResponse } from '@application/protocols';
 
 export const ok = <T = any> (data: T): HttpResponse<T> => ({
   statusCode: 200,

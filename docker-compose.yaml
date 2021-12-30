@@ -1,26 +1,27 @@
-vesion: "3"
+version: "3"
 services:
-	db:
-	 container_name: postgres-container
-	 image: postgres
-	 restart: always
-	 volumes:
-    - ./data:/data/db
-   ports:
-		- "35432:5432"
-	 environment:
-	  - POSTGRESQL_USERNAME=postgres
-		- POSTGRESQL_PASSWORD=123456789
-		- POSTGRES_DATABASE=students-api-graphql
-	api:
-	 container_name: students-api-graphql
-	 build: .
-	 image: students-api-graphql
-	 restart: always
-	 command: yarn typeorm migration:run && yarn start
-   volumes:
-    - ./dist:/usr/src/students-api-graphql/dist
-	 ports:
-		- "3333:3333"
-	 links:
-	  - db
+  db:
+    container_name: postgres-container
+    image: postgres
+    restart: always
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=123456789
+      - POSTGRESQL_DATABASE=students-api-graphql
+  api:
+    container_name: students-api-graphql
+    image: node:16
+    restart: always
+    command: bash -c "yarn install --only=prod && yarn typeorm:create_migrations && yarn start"
+    volumes:
+      - ./build:/usr/src/students-api-graphql/build
+    ports:
+      - "3333:3333"
+    links:
+      - db
+  
+  
