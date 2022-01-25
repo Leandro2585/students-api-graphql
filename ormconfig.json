@@ -1,11 +1,11 @@
 {
   "name": "default",
   "type": "postgres",
-  "host": "jdbc:postgresql://localhost:35432/students-api-graphql",
-  "port": 35432,
-  "username": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "docker_postgres",
   "password": "123456789",
-  "database": "students-api-graphql",
+  "database": "students_api_graphql",
   "synchronize": true,
   "logging": false,
   "entities": [

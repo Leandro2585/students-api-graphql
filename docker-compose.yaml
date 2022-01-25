@@ -16,7 +16,9 @@ services:
     container_name: students-api-graphql
     image: node:16
     restart: always
-    command: bash -c "yarn install --only=prod && yarn typeorm:create_migrations && yarn start"
+    depends_on:
+      - db
+    command: bash -c "yarn install --only=prod && yarn typeorm:migrations && yarn typeorm:seed && yarn start"
     volumes:
       - ./build:/usr/src/students-api-graphql/build
     ports:

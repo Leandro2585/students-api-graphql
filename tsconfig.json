@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "build",
     "rootDirs": ["src", "tests"],
-    "target": "ES2021",
+    "target": "esnext",
     "sourceMap": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
