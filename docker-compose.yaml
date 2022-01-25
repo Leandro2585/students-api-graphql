@@ -7,11 +7,11 @@ services:
     volumes:
       - ./data:/data/db
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
-      - POSTGRESQL_USERNAME=postgres
-      - POSTGRESQL_PASSWORD=123456789
-      - POSTGRESQL_DATABASE=students-api-graphql
+      - POSTGRES_USER=docker_postgres
+      - POSTGRES_PASSWORD=123456789
+      - POSTGRES_DB=students_api_graphql
   api:
     container_name: students-api-graphql
     image: node:16

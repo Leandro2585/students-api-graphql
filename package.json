@@ -5,7 +5,7 @@
   "author": "Leandro2585 <leo.real2585@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node build/main/server.js",
+    "start": "yarn typeorm:seed && node build/main/server.js",
     "build": "rimraf build && babel src --extensions \".js,.ts\" --out-dir build",
     "up": "yarn build && docker-compose up -d",
     "down": "docker-compose down",

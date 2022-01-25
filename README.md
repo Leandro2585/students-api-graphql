@@ -13,7 +13,7 @@
   </a>
 
   <a href="https://github.com.br/Leandro2585">
-    <img alt="Feito pela Leandro" src="https://img.shields.io/badge/feito%20por-Leandro-%237519C1">
+    <img alt="Feito por Leandro" src="https://img.shields.io/badge/feito%20por-Leandro-%237519C1">
   </a>
 
 </p>
@@ -57,38 +57,14 @@ $ git clone git@github.com:Leandro2585/students-api-graphql.git
 # Vá para a pasta server
 $ cd students-api-graphql
 
-# Instale as dependências
-$ npm install
-
-# Crie uma instância do banco de dados PostgreSQL com Docker
-$ docker run -d --name postgresql -e POSTGRESQL_PASSWORD=your_password -e POSTGRESQL_USERNAME=your_username -e POSTGRES_DATABASE=your_database -p 35432:5432 bitnami/postgresql:latest
-
-# Configure suas credenciais de banco no ormconfig.json
-
-# Rode as migrations para modelar seu banco de dados
-$ npm run typeorm migration:run
-
-# Rode os testes pra verificar se tudo está funcionando corretamente
-$ npm test:staged
-
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev
+# Execute sua aplicação utilizando o docker utilizando o comando 'up'
+$ yarn up
 
 # O servidor inciará na porta:3333 - acesse http://localhost:3333
 
 ```
 
 ---
-
-## 🛠 Tecnologias
-
-As seguintes ferramentas foram usadas na construção do projeto:
-
-#### [](https://github.com/Leandro2585/students-api-graphql)**Students Api GraphQL**  ([NodeJS](https://nodejs.org/en/)  +  [TypeScript](https://www.typescriptlang.org/))
-
--   **[Express](https://expressjs.com/)**
-
-> Veja o arquivo  [package.json](https://github.com/Leandro2585/students-api-graphql/blob/master/package.json)
 
 ## 💪 Como contribuir para o projeto
 
@@ -114,4 +90,4 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 Este projeto esta sobe a licença [MIT](https://spdx.org/licenses/CPL-3.0-or-later.html).
 
-Feito com ❤️ por Leandro Real 👋🏽 [Entre em contato!](https://www.linkedin.com/in/leandro-r-434b811a5/)
+Desenvolvido por Leandro Real 👋🏽 [Entre em contato!](https://www.linkedin.com/in/leandro-r-434b811a5/)
