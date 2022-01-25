@@ -88,6 +88,6 @@ $ yarn up
 
 ## 📝 Licença
 
-Este projeto esta sobe a licença [MIT](https://spdx.org/licenses/CPL-3.0-or-later.html).
+Este projeto esta sobe a licença [MIT](https://spdx.org/licenses/MIT.html).
 
 Desenvolvido por Leandro Real 👋🏽 [Entre em contato!](https://www.linkedin.com/in/leandro-r-434b811a5/)
